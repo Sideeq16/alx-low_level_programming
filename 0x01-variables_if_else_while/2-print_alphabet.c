@@ -9,8 +9,9 @@
  */
 int main(void)
 {
+	char a;
 	/* print letter a to z in lower case */
-	for (char a = 'a'; a <= 'z'; a++)
+	for (a = 'a'; a <= 'z'; a++)
 	{
 		putchar(a);
 	}
