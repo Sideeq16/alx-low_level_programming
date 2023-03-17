@@ -20,11 +20,11 @@ int main(void)
 	/* your code goes there */
 	if (lastDigit > 5)
 	{
-		printf("Last digit of %d is %d and is greater than 5", n, lastDigit);
+		printf("Last digit of %d is %d and is greater than 5\n", n, lastDigit);
 	}
 	else if (lastDigit == 0)
 	{
-		printf("Last digit of %d is 0 and is %d", n, lastDigit);
+		printf("Last digit of %d is 0 and is %d\n", n, lastDigit);
 	}
 	else if (lastDigit < 6 && lastDigit != 0)
 	{
