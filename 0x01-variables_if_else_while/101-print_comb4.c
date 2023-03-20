@@ -6,8 +6,8 @@
  */
 int main(void)
 {
-	char i, j, k;
-	char com_i, com_j, com_k;
+	int i, j, k;
+	int com_i, com_j, com_k;
 
 	for (i = 0; i <= 9; i++)
 	{
