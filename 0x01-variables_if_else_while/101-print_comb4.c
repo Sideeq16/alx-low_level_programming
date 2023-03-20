@@ -25,7 +25,11 @@ int main(void)
 					putchar(com_j);
 					putchar(com_k);
 
-					(i == 7 && j == 8 && k == 9) ? 0 : putchar(',');
+					if (i == 7 || j == 8 || k == 9)
+					{
+						putchar(',');
+						putchar(' ');
+					}
 
 				}
 			}
