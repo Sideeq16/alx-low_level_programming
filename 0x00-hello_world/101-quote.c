@@ -9,7 +9,10 @@
  */
 int main(void)
 {
-	const char *message = "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n";
-	write(STDERR_FILENO, message, strlen(message));
+	char str1[100] = "and that piece of art is useful\" - Dora Korpar, ";
+	char str2[100] = "2015-10-19\n";
+
+	strcat(str1, str2);
+	write(STDERR_FILENO, str1, strlen(str1));
 	return (1);
 }
