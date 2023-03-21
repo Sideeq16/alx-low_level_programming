@@ -1,9 +1,9 @@
 #include "main.h"
 /**
  * print_alphabet - print English Alphabeti
- * Return: All english alphabet 
+ * Return: All english alphabet
  */
-void print_alphabet()
+void print_alphabet(void)
 {
 	char i;
 
