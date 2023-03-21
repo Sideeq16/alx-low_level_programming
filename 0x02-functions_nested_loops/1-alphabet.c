@@ -1,17 +1,7 @@
-#include "main.h"
-
 /**
- * main - print out text with define function
- * Return: _putchar
+ * print_alphabet - print English Alphabeti
+ * Return: All english alphabet 
  */
-int main(void)
-{
-	
-	_putchar('\n');
-
-	return (0);
-}
-
 void print_alphabet()
 {
 	char i;
