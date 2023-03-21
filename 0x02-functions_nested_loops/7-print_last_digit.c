@@ -6,7 +6,7 @@
  */
 int print_last_digit(int n)
 {
-	int count = 0;
+	int result;
 	int last = (n %= 10);
 
 	result = last < 0 ? last * -1 : last;
