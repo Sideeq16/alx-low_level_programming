@@ -4,7 +4,7 @@
  * Return: 1 or 0
  * @c: letter to pass
  */
-void _islower(int c)
+int _islower(int c)
 {
 	char i;
 	int found = 0;
