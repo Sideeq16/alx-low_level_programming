@@ -7,11 +7,9 @@
 int print_last_digit(int n)
 {
 	int count = 0;
+	int last = (n %= 10);
 
-	do {
-		n /= 10;
-		++count;
-	} while (n != 0);
+	result = last < 0 ? last * -1 : last;
 
-	return (count);
+	return (result);
 }
