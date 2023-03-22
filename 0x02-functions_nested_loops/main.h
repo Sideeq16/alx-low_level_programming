@@ -10,3 +10,4 @@ int add(int num1, int num2);
 int _print_long(long value);
 void times_table(void);
 void _inner_table(int,int);
+void print_to_98(int n);
