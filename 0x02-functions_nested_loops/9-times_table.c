@@ -20,9 +20,9 @@ void times_table(void)
 				if (j != 9)
 				{
 					_putchar(',');
+					_putchar(' ');
+					_putchar(' ');
 				}
-				_putchar(' ');
-				_putchar(' ');
 			}
 			else
 			{
@@ -47,6 +47,19 @@ void _inner_table(int i, int j)
 	int digit_a;
 	int digit_b;
 
+	if (j != 0)
+	{
+		if ((j * i) > 9)
+		{
+			_putchar(' ');
+		}
+		else
+		{
+			_putchar(' ');
+			_putchar(' ');
+		}
+	}
+
 	if ((j * i) > 9)
 	{
 		digit_a = ((j * i) / 10);
@@ -56,8 +69,8 @@ void _inner_table(int i, int j)
 		if (j != 9)
 		{
 			_putchar(',');
+			/*_putchar(' ');*/
 		}
-			_putchar(' ');
 	}
 	else
 	{
@@ -65,8 +78,9 @@ void _inner_table(int i, int j)
 		if (j != 9)
 		{
 			_putchar(',');
+		/*	_putchar(' '); */
+		/*	_putchar(' '); */
 		}
-			_putchar(' ');
-			_putchar(' ');
 	}
 }
+
