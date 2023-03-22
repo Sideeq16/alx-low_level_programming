@@ -9,3 +9,4 @@ int print_last_digit(int n);
 int add(int num1, int num2);
 int _print_long(long value);
 void times_table(void);
+void _inner_table(int,int);
