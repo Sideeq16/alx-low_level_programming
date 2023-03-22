@@ -58,7 +58,6 @@ void _inner_table(int i, int j)
 			_putchar(',');
 		}
 			_putchar(' ');
-			_putchar(' ');
 	}
 	else
 	{
