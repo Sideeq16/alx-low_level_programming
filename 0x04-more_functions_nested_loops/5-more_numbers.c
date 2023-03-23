@@ -25,7 +25,7 @@ void more_numbers(void)
 				_putchar(start);
 
 				if (j > 9)
-				{	
+				{
 					_putchar(remain);
 				}
 			}
