@@ -20,18 +20,10 @@ int _isupper(int c)
 
 	if (found == 1)
 	{
-		_putchar(c);
-		_putchar(':');
-		_putchar(' ');
-		_putchar(found + '0');
+		return (1);
 	}
 	else
 	{
-		_putchar(c);
-		_putchar(':');
-		_putchar(' ');
-		_putchar(found + '0');
+		return (0);
 	}
-
-	return (0);
 }
