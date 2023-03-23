@@ -20,17 +20,17 @@ void more_numbers(void)
 			}
 			else
 			{
-				start = (j / 10) + '0';
+				start = j > 9 ? (j / 10) + '0' : (j + '0');
 				remain = (j % 10) + '0';
-
 				_putchar(start);
-				_putchar(remain);
-			}
 
+				if (j > 9)
+				{	
+					_putchar(remain);
+				}
+			}
 
 			j++;
 		}
-		_putchar('\n');
+			_putchar('\n');
 	}
-		_putchar('\n');
-}
