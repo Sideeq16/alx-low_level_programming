@@ -8,7 +8,7 @@ void rev_string(char *s)
 {
 	int m_size = 0;
 	int i;
-	char *clone_s;
+	char *clone_s = s;
 	int strSize, j = 0, k = 0;
 
 
