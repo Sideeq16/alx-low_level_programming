@@ -7,16 +7,17 @@
 void rev_string(char *s)
 {
 	int m_size = 0;
+	int i;
+	char *clone_s;
+	int strSize, j = 0, k = 0;
+
 
 	while (s[m_size] != '\0')
 	{
 		m_size++;
 	}
-	int i = m_size - 1;
-	char clone_s[i];
-	int strSize = i;
-	int j = 0;
-	int k = 0;
+	i = (m_size - 1);
+	strSize = i;
 
 	while (i >= 0)
 	{
