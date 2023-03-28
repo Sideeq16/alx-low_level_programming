@@ -1,5 +1,5 @@
-#include "main.h"
 #include <stdio.h>
+#include "main.h"
 
 /**
 * print_array - print arrays
@@ -18,6 +18,6 @@ void print_array(int *a, int n)
 			printf(", ");
 		}
 	}
-	_putchar('\n');
+	printf("\n");
 }
 
