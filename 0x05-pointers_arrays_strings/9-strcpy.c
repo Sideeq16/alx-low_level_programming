@@ -16,8 +16,12 @@ char *_strcpy(char *dest, char *src)
 		mysize++;
 	}
 
-	for (i = 0; i < mysize; i++)
+	for (i = 0; i <= mysize; i++)
 	{
+		if (i == mysize)
+		{			
+			*(dest + i) = '\0';
+		}
 		*(dest + i) = src[i];
 	}
 	return (src);
