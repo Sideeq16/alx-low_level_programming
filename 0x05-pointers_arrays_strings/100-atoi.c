@@ -2,28 +2,47 @@
 #include "main.h"
 
 /**
-* *_strcpy - print arrays
-* @dest: destination to copy to;
-* @src: characters to copy;
+* _atoi - convert a string to integer
+* @s:  take string to conv to integer
 * Return: source string upon successful
 */
-char *_strcpy(char *dest, char *src)
+int _atoi(char *s)
 {
-	int i = 0, mysize = 0;
+	int lent = 0;
+	int num = 0, i, type;
+	int sign = 0, result;
+	int next;
 
-	while (src[mysize] != '\0')
+	while (s[lent] != '\0')
 	{
-		mysize++;
+		lent++;
 	}
-
-	for (i = 0; i <= mysize; i++)
+	for (i = 0; i < lent; i++)
 	{
-		if (i == mysize)
+		type = s[i] - '0';
+		next = s[i + 1] - '0';
+
+		if ((sign == 0 && s[i] == 45) || (sign == 0 && s[i] == 43))
 		{
-			*(dest + i) = '\0';
+			sign = s[i] == 45 ? 1 : 2;
 		}
-		*(dest + i) = src[i];
-	}
-	return (src);
-}
 
+		if (type >= 0 && type <= 9)
+		{
+			if (num == 0)
+				num = type;
+			else
+				num = (num * 10) + type;
+			if (next >= 0 && next <= 9)
+			{
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+	result = sign == 1 ? (num * -1) : num;
+
+	return (result);
+}
