@@ -16,11 +16,11 @@ void puts2(char *str)
 	{
 		if (i == 0)
 		{
-			_putchar(i + '0');
+			_putchar(str[i]);
 		}
-		else if (str[i] % 2 == 0)
+		else if (i % 2 == 0)
 		{
-			_putchar(i + '0');
+			_putchar(str[i]);
 		}
 	}
 	_putchar('\n');
