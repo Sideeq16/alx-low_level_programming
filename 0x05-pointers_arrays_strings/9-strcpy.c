@@ -19,7 +19,7 @@ char *_strcpy(char *dest, char *src)
 	for (i = 0; i <= mysize; i++)
 	{
 		if (i == mysize)
-		{			
+		{
 			*(dest + i) = '\0';
 		}
 		*(dest + i) = src[i];
