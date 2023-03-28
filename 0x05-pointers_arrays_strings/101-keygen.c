@@ -16,8 +16,11 @@ int main(void)
 	char letters[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	char digits[] = "0123456789";
 	char special_characters[] = "!@#$%^&*()_+-=[]{}\\|;':\",./<>?";
+	int i;
+	char password[(PASSWORD_LENGTH + 1)];
 
 	char allowed_characters[1000] = "";
+	int random_index;
 
 	strcat(allowed_characters, letters);
 	strcat(allowed_characters, digits);
@@ -25,11 +28,10 @@ int main(void)
 
 	srand(time(NULL));
 
-	char password[(PASSWORD_LENGTH + 1)];
 
-	for (int i = 0; i < PASSWORD_LENGTH; i++)
+	for (i = 0; i < PASSWORD_LENGTH; i++)
 	{
-		int random_index = rand() % strlen(allowed_characters);
+		random_index = rand() % strlen(allowed_characters);
 
 		password[i] = allowed_characters[random_index];
 	}
