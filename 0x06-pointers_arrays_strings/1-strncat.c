@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
-* *_strcat - concatinate string
+* *_strncat - concatinate string
 * @dest: destination string
 * @src: source string
 * @n: number of string to concate
