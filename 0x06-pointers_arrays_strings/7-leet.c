@@ -2,32 +2,36 @@
 
 /**
 * *leet - compare two string
-* @str: strings
+* @s: strings
 * Return: strings
 */
-char *leet(char *str)
+char *leet(char *s)
 {
-	int i = 0, j;
+	int i = 0;
 
-	const char *p = "a4A4e3E3o0O0t7T7l1L1";
-
-	while (str[i] != '\0')
+	while (*(s + i) != '\0')
 	{
-
-	char c = str[i];
-
-	j = 0;
-	while (p[j] != '\0')
-	{
-	if (c == p[j])
-	{
-		str[i] = p[j + 1];
-		break;
+		if (*(s + i) == 'a' || *(s + i) == 'A')
+		{
+			*(s + i) = '4';
+		}
+		else if (*(s + i) == 'e' || *(s + i) == 'E')
+		{
+			*(s + i) = '3';
+		}
+		else if (*(s + i) == 'o' || *(s + i) == 'O')
+		{
+			*(s + i) = 'O';
+		}
+		else if (*(s + i) == 't' || *(s + i) == 'T')
+		{
+			*(s + i) = '7';
+		}
+		else if (*(s + i) == 'l' || *(s + i) == 'L')
+		{
+			*(s + i) = '1';
+		}
+		i++;
 	}
-		j++;
-	}
-	i++;
-	}
-
-	return (str);
+	return (s);
 }
