@@ -11,13 +11,21 @@ void print_number(int n)
 		_putchar('-');
 	}
 	n = n < 0 ? n * -1 : n;
-	if (n <= 9)
+	if (n >= 0 && n <= 9)
 	{
 		_putchar(n + '0');
 	}
 	else
 	{
-		print_number(n / 10);
-		_putchar((n % 10) + '0');
+		if (n == -2147483648)
+		{
+			print_number(2147483648 / 10);
+			_putchar((2147483648 % 10) + '0');
+		}
+		else
+		{
+			print_number(n / 10);
+			_putchar((n % 10) + '0');
+		}
 	}
 }
