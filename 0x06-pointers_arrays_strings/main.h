@@ -8,3 +8,5 @@ char *string_toupper(char *s);
 char *cap_string(char *);
 char *leet(char *);
 int spacing(int i);
+void print_number(int n);
+char *rot13(char *);
