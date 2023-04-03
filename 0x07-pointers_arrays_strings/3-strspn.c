@@ -1,18 +1,41 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * *_strspn - filling available memory space with a constant value
+ * @s: buffer to use
+ * @accept: constant for filing
+ * Return: buffter of the array
  */
-int main(void)
+unsigned int _strspn(char *s, char *accept)
 {
-    char *s = "hello, world";
-    char *f = "oleh";
-    unsigned int n;
+	int i = 0;
+	int j = 0;
+	int signal = 0;
 
-    n = _strspn(s, f);
-    printf("%u\n", n);
-    return (0);
+	while (s[i] != '\0')
+	{
+		j = 0;
+		signal = 0;
+		while (accept[j] != '\0')
+		{
+			if (s[i] == accept[j])
+			{
+				signal = 1;
+				break;
+			}
+			j++;
+		}
+		if (signal == 0)
+		{
+			return (i);
+		}
+		i++;
+	}
+	/**
+	*if (c == '\0')
+	*{
+	*	return (s + i);
+	*}
+	*/
+	return (0);
 }
