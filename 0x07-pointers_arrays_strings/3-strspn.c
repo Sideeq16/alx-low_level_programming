@@ -31,11 +31,5 @@ unsigned int _strspn(char *s, char *accept)
 		}
 		i++;
 	}
-	/**
-	*if (c == '\0')
-	*{
-	*	return (s + i);
-	*}
-	*/
 	return (0);
 }
