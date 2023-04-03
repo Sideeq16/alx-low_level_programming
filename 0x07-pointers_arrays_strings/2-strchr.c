@@ -1,21 +1,22 @@
 #include "main.h"
-#include <stdio.h>
 
 /**
- * main - check the code
- *
- * Return: Always 0.
+ * *_strchr - filling available memory space with a constant value
+ * @s: buffer to use
+ * @c: constant for filling
+ * Return: buffter of the array
  */
-int main(void)
+char *_strchr(char *s, char c)
 {
-    char *s = "hello";
-    char *f;
+	int i = 0;
 
-    f = _strchr(s, 'l');
-
-    if (f != NULL)
-    {
-        printf("%s\n", f);
-    }
-    return (0);
+	while (s[i] != '\0')
+	{
+		if (s[i] == c)
+		{
+			return (s + i);
+		}
+		i++;
+	}
+	return ("NULL");
 }
