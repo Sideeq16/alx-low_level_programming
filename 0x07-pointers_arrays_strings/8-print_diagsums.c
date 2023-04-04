@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * print-diagsums - sum diagonal of a square matrix
- *
- * Return: Always 0.
+ * print_diagsums - sum diagonal of a square matrix
+ * @a: string to find from
+ * @size: string to loop through
  */
 void print_diagsums(int *a, int size)
 {
@@ -12,13 +12,14 @@ void print_diagsums(int *a, int size)
 	int i = 0;
 	int diagA = 0;
 	int diagB = 0;
+
 	j = size - 1;
-	
+
 	for (i = 0; i < size; i++)
 	{
 		diagA += *(a + i + j * size);
 		diagB += *(a + i + i * size);
-		j--; 
+		j--;
 	}
 	printf("%d, %d\n", diagA, diagB);
 }
