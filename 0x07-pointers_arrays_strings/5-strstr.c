@@ -17,20 +17,17 @@ char *_strstr(char *s, char *accept)
 	{
 		k = i;
 		j = 0;
+		signal = 1;
 		while (accept[j] != '\0')
 		{
-			if (s[k] == accept[j])
+			if (s[k] != accept[j])
 			{
 				signal = 0;
-			}
-			else
-			{
-				signal = 1;
 			}
 			k++;
 			j++;
 		}
-		if (signal == 0)
+		if (signal == 1)
 		{
 			return (s + i);
 		}
