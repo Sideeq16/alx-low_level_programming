@@ -31,7 +31,10 @@ void _print_rev_recursion(char *s)
 		}
 		else
 		{
-			_putchar('\n');
+			if (*s != '\0')
+			{
+				_putchar('\n');
+			}
 		}
 	}
 }
