@@ -34,9 +34,6 @@ int is_palindrome_helper(char *word, char *str)
  */
 int is_palindrome(char *s)
 {
-
-	int len = strlen(s);
-
 	if (*s == '\0')
 		return (1);
 	return (is_palindrome_helper(s, s));
