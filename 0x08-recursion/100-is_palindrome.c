@@ -1,5 +1,6 @@
 #include "main.h"
 #include <string.h>
+#include <stdio.h>
 
 /**
  * is_palindrome_helper - helper class for palindrome
@@ -11,18 +12,15 @@ int is_palindrome_helper(char *word, char *str)
 {
 	int len = strlen(str) - 1;
 
-	if (word[len] != str[0])
-	{
-		return (0);
-	}
 	if (len != 0)
 	{
-		is_palindrome_helper(word, str + 1);
+		if (word[len] == str[0])
+		{
+			return (is_palindrome_helper(word, str + 1));
+		}
+		return (0);
 	}
-	else
-	{
 		return (1);
-	}
 
 }
 
