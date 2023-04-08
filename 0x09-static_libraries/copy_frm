@@ -1,0 +1,2 @@
+#!/bin/bash
+cp ./../0x02-functions_nested_loops/*.c ./c_files && cp ./../0x04-more_functions_nested_loops/*.c ./c_files/ && cp ./../0x05-pointers_arrays_strings/*.c ./c_files/ && cp ./../0x06-pointers_arrays_strings/*.c ./c_files/ && cp ./../0x07-pointers_arrays_strings/*.c ./c_files/ && cp ./../0x08-recursion/*.c ./c_files/
