@@ -1,0 +1,2 @@
+#!/bin/bash
+cp ./c_files/{0-isupper.c,1-memcpy.c} ./rl_file/
