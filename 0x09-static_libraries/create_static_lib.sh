@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -name '*.c' | sort | xargs gcc -c && find . -name '*.o' | sort | xargs ar rc liball.a;
+find . -name '*.c' gcc -c {} \; && find . -name '*.o' -exec ar rc liball.a {}\;
