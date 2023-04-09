@@ -1,0 +1,16 @@
+#!/bin/bash
+
+newname=""
+
+for files in ./rl_file/*.c
+
+do
+
+	#names=$($files | cut -d '/' -f3)
+	names=$(echo $files | cut -d '/' -f3 | cut -d '.' -f1)
+	newname="$names.o"
+	echo $newname
+	gcc -c $files -o $newname
+
+done
+echo 'we are done'
