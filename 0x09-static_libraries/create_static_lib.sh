@@ -1,2 +1,3 @@
 #!/bin/bash
-find . -name '*.c' gcc -c {} \; && find . -name '*.o' -exec ar rc liball.a {}\;
+
+find . -name '*.c' -exec gcc -c {} \; && find . -name '*.o' -exec ar rc liball.a {} \;
