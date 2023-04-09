@@ -1,0 +1,10 @@
+#!/bin/bash
+
+newname=""
+
+for files in ./*.c
+
+do
+	betty $files
+done
+echo 'we are done'
