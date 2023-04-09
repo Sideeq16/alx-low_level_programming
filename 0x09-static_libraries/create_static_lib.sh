@@ -4,7 +4,7 @@
 gcc -c *.c
 
 # Archive the object files into a static library
-ar rcs libmy.a *.o
+ar rcs liball.a *.o
 
 # Clean up the object files
 rm *.o
