@@ -12,5 +12,3 @@ ranlib libmy.a
 # Clean up the object files
 rm *.o
 
-# new line 
-echo
