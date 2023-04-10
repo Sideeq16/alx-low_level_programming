@@ -1,5 +1,5 @@
-#ifndef MY_HEADER_FILE_H
-#define MY_HEADER_FILE_H
+#ifndef _MY_HEADER_FILE_H_
+#define _MY_HEADER_FILE_H_
 
 int _putchar(char c);
 int _islower(int c);
@@ -22,4 +22,4 @@ unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
 
-#endif /* MY_HEADER_FILE_H */
+#endif /* _MY_HEADER_FILE_H_ */
