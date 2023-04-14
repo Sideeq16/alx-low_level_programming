@@ -13,7 +13,7 @@
 int *_toNumber(char *str)
 {
 	int *vec1;
-	int i = 0;
+	long unsigned int i = 0;
 
 	vec1 = malloc(sizeof(int) * strlen(str));
 
