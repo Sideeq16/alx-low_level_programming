@@ -92,7 +92,7 @@ char *multiply(char *num1, char *num2)
 	{
 		str[index++] = result[i] + '0';
 	}
-	str[index] = '\0';
+	/*str[index] = '\0';*/
 	free(vec1);
 	free(vec2);
 	free(result);
@@ -111,12 +111,12 @@ int main(int argc, char *argv[])
 
 	if (argc < 3 || argc > 3)
 	{
-	printf("%s", "Error");
+	printf("%s\n", "Error");
 		exit(98);
 	}
 	if (!_isNumber(argv[1]) || !_isNumber(argv[2]))
 	{
-	printf("%s", "Error");
+	printf("%s\n", "Error");
 		exit(98);
 	}
 
