@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "main.h"
 
 /**
  * _toNumber - conver string to array of number
@@ -114,6 +115,6 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	/* printf("%s\n", multiply(argv[1], argv[2]));*/
+	printf("%s\n", multiply(argv[1], argv[2]));
 	return (0);
 }
