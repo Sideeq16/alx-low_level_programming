@@ -54,68 +54,69 @@ char *multiply(char *num1, char *num2)
 {
 	int *vec1 = _toNumber(num1);
 	int *vec2 = _toNumber(num2);
+	int len1 = strlen(num1), len2 = strlen(num2);
 	int *result;
-	int i = 0, carry = 0, j = 0, product;
+	int i = 0, j = 0, index = 0;
 	char *str;
 
 	result = malloc(sizeof(int) * (strlen(num1) + strlen(num2)));
-	/* memset(result, 0, sizeof(result)); */
 
-	for (i = 0; i < strlen(num2); i++)
+	for (i = 0; i < len1; i++)
 	{
-		carry = 0;
-
-		for (j = 0; j < strlen(num1); j++)
+		for (j = 0; j < len2; j++)
 		{
-			product = vec1[j] * vec2[i] + carry + result[i + j];
-			carry = product / 10;
-			result[i + j] = product % 10;
+			result[i + j] += vec1[i] * vec2[j];
 		}
-		result[i + strlen(num1)] = carry;
 	}
 
-	while (strlen(num1) + strlen(num2) > 1 &&
-	result[strlen(num1) + strlen(num2) - 1] == 0)
+	for (i = 0; i < len1 + len2 - 1; i++)
 	{
-		memmove(&result[strlen(num1) + strlen(num2) - 1], &result[strlen(num1)
-		+ strlen(num2)], sizeof(result) - strlen(num1) - strlen(num2) + 1);
+		result[i + 1] = result[i] / 10;
+		result[i] %= 10;
 	}
 
-	str = (char *) malloc((strlen(num1) + strlen(num2) + 1) * sizeof(char));
-
-	memset(str, '0', strlen(num1) + strlen(num2));
-
-	for (i = 0; i < strlen(num1) + strlen(num2); i++)
+	while (len1 + len2 > 1 && result[len1 + len2 - 1] == 0)
 	{
-		str[strlen(num1) + strlen(num2) - i - 1] = result[i] + '0';
+		len2--;
 	}
 
-	str[strlen(num1) + strlen(num2)] = '\0';
+	str = malloc((len1 + len2 + 1) * sizeof(char));
+
+	for (i = len1 + len2 - 1; i >= 0; i--)
+	{
+		str[index++] = result[i] + '0';
+	}
+	str[index] = '\0';
+	free(vec1);
+	free(vec2);
+	free(result);
 	return (str);
 
 }
 
 /**
  * main - mutiply long number
- * @agrv: param value
+ * @argv: param value
  * @argc: count param
  * Return: long multiplication
  */
 int main(int argc, char *argv[])
 {
 
+	/**
 	if (argc < 3 || argc > 3)
 	{
 	printf("%s", "Error");
-	exit(98);
+		exit(98); 
 	}
 	if (!_isNumber(argv[1]) || !_isNumber(argv[2]))
 	{
 	printf("%s", "Error");
-	exit(98);
+		exit(98); 
 	}
+	*/
 
 
-	printf("%s\n", multiply(argv[1], argv[2]));
+	printf("%s\n", multiply("50", "50"));
 	return (0);
 }
