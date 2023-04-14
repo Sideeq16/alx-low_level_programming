@@ -38,8 +38,8 @@ int _isNumber(char *str)
 		else
 		{
 			return (0);
-		i++;
 		}
+		i++;
 	}
 	return (1);
 }
@@ -71,7 +71,7 @@ char *multiply(char *num1, char *num2)
 
 	for (i = 0; i < len1 + len2 - 1; i++)
 	{
-		result[i + 1] = result[i] / 10;
+		result[i + 1] += result[i] / 10;
 		result[i] %= 10;
 	}
 
@@ -103,20 +103,17 @@ char *multiply(char *num1, char *num2)
 int main(int argc, char *argv[])
 {
 
-	/**
 	if (argc < 3 || argc > 3)
 	{
 	printf("%s", "Error");
-		exit(98); 
+		exit(98);
 	}
 	if (!_isNumber(argv[1]) || !_isNumber(argv[2]))
 	{
 	printf("%s", "Error");
-		exit(98); 
+		exit(98);
 	}
-	*/
 
-
-	printf("%s\n", multiply("50", "50"));
+	printf("%s\n", multiply(argv[1], argv[2]));
 	return (0);
 }
