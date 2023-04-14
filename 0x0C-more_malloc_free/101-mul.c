@@ -13,9 +13,14 @@
 int *_toNumber(char *str)
 {
 	int *vec1;
-	long unsigned int i = 0;
+	unsigned long int i = 0;
 
 	vec1 = malloc(sizeof(int) * strlen(str));
+
+	if (vec1 == NULL)
+	{
+		return (NULL);
+	}
 
 	for (i = 0; i < strlen(str); i++)
 		vec1[i] = str[strlen(str) - i - 1] - '0';
@@ -53,8 +58,7 @@ int _isNumber(char *str)
  */
 char *multiply(char *num1, char *num2)
 {
-	int *vec1 = _toNumber(num1);
-	int *vec2 = _toNumber(num2);
+	int *vec1 = _toNumber(num1), *vec2 = _toNumber(num2);
 	int len1 = strlen(num1), len2 = strlen(num2);
 	int *result;
 	int i = 0, j = 0, index = 0;
@@ -62,12 +66,13 @@ char *multiply(char *num1, char *num2)
 
 	result = malloc(sizeof(int) * (strlen(num1) + strlen(num2)));
 
+	if (result == NULL)
+		return (NULL);
+
 	for (i = 0; i < len1; i++)
 	{
 		for (j = 0; j < len2; j++)
-		{
-			result[i + j] += vec1[i] * vec2[j];
-		}
+		result[i + j] += vec1[i] * vec2[j];
 	}
 
 	for (i = 0; i < len1 + len2 - 1; i++)
