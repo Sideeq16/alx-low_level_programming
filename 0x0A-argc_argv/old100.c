@@ -9,18 +9,16 @@
  * @change: coin to change
  * Return: min number of coin to be change
  */
-long int min_coin(long int change)
-{
-	/* int MAX_CHANGE = 100; */
+int min_coin(int change)
+{	int MAX_CHANGE = 100;
 	int COINS = 5;
-	long int *table;
-	long int i, sub_res;
-	int j;
+	int *table;
+	int i, j, sub_res;
 	int coins[5] = {25, 10, 5, 2, 1};
 	int rl_change;
 
-	table = malloc(sizeof(long int) * (change + 1));
-	memset(table, 0, (change + 1));
+	table = malloc(sizeof(int) * (MAX_CHANGE + 1));
+	memset(table, 0, (MAX_CHANGE + 1));
 
 	if (table == NULL)
 	{
@@ -29,14 +27,14 @@ long int min_coin(long int change)
 
 	for (i = 1; i <= change; i++)
 	{
-		table[i] = LONG_MAX;
+		table[i] = INT_MAX;
 		for (j = 0; j < COINS; j++)
 		{
 			if (i >= coins[j])
 			{
 				sub_res = table[i - coins[j]];
 
-				if (sub_res != LONG_MAX && sub_res + 1 < table[i])
+				if (sub_res != INT_MAX && sub_res + 1 < table[i])
 					table[i] = sub_res + 1;
 			}
 
