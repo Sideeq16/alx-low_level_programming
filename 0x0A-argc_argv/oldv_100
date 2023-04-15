@@ -1,6 +1,8 @@
 #include "main.h"
+#include <string.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <limits.h>
 
 /**
  * min_coin - pring number of coins change
@@ -11,19 +13,40 @@ long int min_coin(long int change)
 {
 	/* int MAX_CHANGE = 100; */
 	int COINS = 5;
-	long int i, count = 0;
+	long int *table;
+	long int i, sub_res;
+	int j;
 	int coins[5] = {25, 10, 5, 2, 1};
+	int rl_change;
 
-	for (i = 0; i < COINS; i++)
+	table = malloc(sizeof(long int) * (change + 1));
+	memset(table, 0, (change + 1));
+
+	if (table == NULL)
 	{
-		while (change >= coins[i])
+		return (0);
+	}
+
+	for (i = 1; i <= change; i++)
+	{
+		table[i] = LONG_MAX;
+		for (j = 0; j < COINS; j++)
 		{
-			change -= coins[i];
-			count++;
+			if (i >= coins[j])
+			{
+				sub_res = table[i - coins[j]];
+
+				if (sub_res != LONG_MAX && sub_res + 1 < table[i])
+					table[i] = sub_res + 1;
+			}
+
 		}
 	}
 
-	return (count);
+	rl_change = table[change];
+	free(table);
+
+	return (rl_change);
 }
 
 /**
