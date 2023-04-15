@@ -16,6 +16,7 @@ int *_toNumber(char *str)
 	unsigned long int i = 0;
 
 	vec1 = malloc(sizeof(int) * strlen(str));
+	memset(vec1, 0, sizeof(int) * strlen(str));
 
 	if (vec1 == NULL)
 	{
@@ -65,6 +66,7 @@ char *multiply(char *num1, char *num2)
 	char *str;
 
 	result = malloc(sizeof(int) * (strlen(num1) + strlen(num2)));
+	memset(result, 0, sizeof(int) * (len1 + len2));
 
 	if (result == NULL)
 		return (NULL);
@@ -74,19 +76,18 @@ char *multiply(char *num1, char *num2)
 		for (j = 0; j < len2; j++)
 		result[i + j] += vec1[i] * vec2[j];
 	}
-
 	for (i = 0; i < len1 + len2 - 1; i++)
 	{
 		result[i + 1] += result[i] / 10;
 		result[i] %= 10;
 	}
-
 	while (len1 + len2 > 1 && result[len1 + len2 - 1] == 0)
 	{
 		len2--;
 	}
 
 	str = malloc((len1 + len2 + 1) * sizeof(char));
+	memset(str, 0, sizeof(char) * (len1 + len2) + 1);
 
 	for (i = len1 + len2 - 1; i >= 0; i--)
 	{
@@ -108,6 +109,7 @@ char *multiply(char *num1, char *num2)
  */
 int main(int argc, char *argv[])
 {
+	char *new_ptr;
 
 	if (argc < 3 || argc > 3)
 	{
@@ -120,6 +122,9 @@ int main(int argc, char *argv[])
 		exit(98);
 	}
 
-	printf("%s\n", multiply(argv[1], argv[2]));
+	new_ptr = multiply(argv[1], argv[2]);
+	printf("%s\n", new_ptr);
+
+	free(new_ptr);
 	return (0);
 }
