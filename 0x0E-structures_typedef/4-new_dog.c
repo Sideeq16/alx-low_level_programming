@@ -20,9 +20,9 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 	}
 
-	ptr_dog->name = name;
+	ptr_dog->name = name ? name : "(nil)";
 	ptr_dog->age = age;
-	ptr_dog->owner = owner;
+	ptr_dog->owner = owner ? owner : "(nil)";
 
 	return (ptr_dog);
 }
