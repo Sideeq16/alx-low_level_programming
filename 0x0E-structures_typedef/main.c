@@ -5,9 +5,9 @@ int main(void)
 {
 	struct dog mydog;
 
-	mydog.name = "Poppy";
+	/*mydog.name = "Poppy";
 	mydog.age = 3.5;
-	mydog.owner = "Bob";
+	mydog.owner = "Bob";*/
 	print_dog(&mydog);
 	return(0);
 }
