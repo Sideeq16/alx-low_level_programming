@@ -16,7 +16,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 4)
 	{
-		printf("Error1\n");
+		printf("Error\n");
 		return (98);
 	}
 
@@ -28,13 +28,13 @@ int main(int argc, char *argv[])
 
 	if (op_func == NULL)
 	{
-		printf("Error2\n");
+		printf("Error\n");
 		return (99);
 	}
 
 	if ((operator == '/' || operator == '%') && num2 == 0)
 	{
-		printf("Error3\n");
+		printf("Error\n");
 		return (100);
 	}
 		result = op_func(num1, num2);
