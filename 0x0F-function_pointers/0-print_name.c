@@ -13,7 +13,5 @@ void print_name(char *name, void (*f)(char *))
 		f("nil");
 	}
 	f(name);
-	/* putchar("\0"); */
-	printf("\n");
 }
 
