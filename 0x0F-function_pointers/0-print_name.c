@@ -11,8 +11,7 @@ void print_name(char *name, void (*f)(char *))
 {
 	if (name == NULL)
 	{
-		printf("\n");
-		exit(98);
+		fname("");
 	}
 	f(name);
 }
