@@ -10,8 +10,10 @@ void print_name(char *name, void (*f)(char *))
 {
 	if (name == NULL)
 	{
-		f("(nil)");
+		f("nil");
 	}
 	f(name);
+	printf("\0");
+	printf("\n");
 }
 
