@@ -7,6 +7,7 @@
  * print_numbers - sum all parameter passed
  * @separator: strint separator
  * Return: total sum of parameter
+ * @n: number of argument
  */
 void print_numbers(const char *separator, const unsigned int n, ...)
 {
@@ -14,16 +15,16 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	unsigned int i = 0;
 
 	if (n == 0)
-		return ;
+		return;
 
 	va_start(args, n);
 
 	for (i = 0; i < n; i++)
 	{
-		printf("%d",va_arg(args,int));
+		printf("%d", va_arg(args, int));
 		if (separator != NULL && (i < n - 1))
 		{
-			printf("%s",separator);
+			printf("%s", separator);
 		}
 	}
 	va_end(args);
