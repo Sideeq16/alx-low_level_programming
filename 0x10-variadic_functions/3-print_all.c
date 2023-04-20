@@ -25,6 +25,7 @@ void print_all(const char * const format, ...)
 {
 	va_list args;
 	int i = 0, len;
+	char *str;
 
 	len = strlen(format);
 	va_start(args, format);
@@ -46,7 +47,8 @@ void print_all(const char * const format, ...)
 			print_separator(", ", i < (len - 1));
 			break;
 			case 's':
-			printf("%s", va_arg(args, char *));
+			str = va_arg(args, char *);
+			printf("%s", str == NULL ? "(nil)" : str);
 			print_separator(", ", i < (len - 1));
 			break;
 		}
