@@ -4,7 +4,8 @@
 int main(void)
 {
 	/* int sum;*/
-	print_numbers(", ", 4, 0, 98, -1024, 402);
+	/*print_numbers(", ", 4, 0, 98, -1024, 402);*/
+	print_strings(", ", 2, "Jay", "Djago");
 	
 	/*printf("%d\n", sum);*/
 	/*sum = sum_them_all(4, 98, 1024, 402, -1024);
