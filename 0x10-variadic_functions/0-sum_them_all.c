@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <stdarg.h>
-#include "variadic_function"
+#include "variadic_functions.h"
 
 /**
  * sum_them_all - sum all parameter passed
@@ -24,7 +24,7 @@ int sum_them_all(const unsigned int n, ...)
 		result += va_arg(args, int);
 	}
 	va_end(args);
-	print("\n");
+	/*printf("\n");*/
 
 	return (result);
 }
