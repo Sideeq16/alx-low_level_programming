@@ -48,7 +48,8 @@ void print_all(const char * const format, ...)
 			break;
 			case 's':
 			str = va_arg(args, char *);
-			printf("%s", str == NULL || str == "" ? "(nil)" : str);
+			printf("%s", str);
+			/*printf("%s", str == NULL || str == "" ? "(nil)" : str);*/
 			print_separator(", ", i < (len - 1));
 			break;
 		}
