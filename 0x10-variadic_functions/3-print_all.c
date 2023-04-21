@@ -1,66 +1,51 @@
-#include <stdlib.h>
-#include <stdio.h>
-#include <stdarg.h>
-#include <string.h>
 #include "variadic_functions.h"
 
 /**
- * print_separator - separate values
- * @sep: seprator
- * @condition: conditionn to add comma
+ * print_all - prints anything.
+ * @format: a list of types of arguments passed to the function.
+ * Return: no return.
  */
-void print_separator(char *sep, int condition)
-{
-	if (condition && sep != NULL)
-	{
-		printf("%s", sep);
-	}
-}
 
-/**
- * print_all - print all param passed
- * @format: string format
- */
 void print_all(const char * const format, ...)
 {
-	va_list args;
-	int i = 0, len;
+	va_list varList;
 	char *str;
+	const char t_arg[] = "cifs";
+	unsigned int i = 0, j, c = 0;
 
-	len = strlen(format);
-	va_start(args, format);
-
-	while (format[i] != '\0')
+	va_start(varList, format);
+	while (format && format[i])
 	{
+		j = 0;
+		while (t_arg[j])
+		{
+			if (format[i] == t_arg[j] && c)
+			{
+				printf(", ");
+				break;
+			} j++;
+		}
 		switch (format[i])
 		{
-			case 'c':
-			printf("%c", va_arg(args, int));
-			print_separator(", ", i < (len - 1));
+		case 'c':
+			printf("%c", va_arg(varList, int)), c = 1;
 			break;
-			case 'f':
-			printf("%f", va_arg(args, double));
-			print_separator(", ", i < (len - 1));
+		case 'i':
+			printf("%d", va_arg(varList, int)), c = 1;
 			break;
-			case 'i':
-			printf("%d", va_arg(args, int));
-			print_separator(", ", i < (len - 1));
+		case 'f':
+			printf("%f", va_arg(varList, double)), c = 1;
 			break;
-			case 's':
-			str = va_arg(args, char *);
-			if (str != NULL)
+		case 's':
+			str = va_arg(varList, char *), c = 1;
+			if (!str)
 			{
-				printf("%s", str);
-				print_separator(", ", i < (len - 1));
+				printf("(nil)");
 				break;
 			}
-			printf("%s", "(nil)");
-			print_separator(", ", i < (len - 1));
+			printf("%s", str);
 			break;
-		}
-		i++;
+		} i++;
 	}
-
-	va_end(args);
-	printf("\n");
+	printf("\n"), va_end(varList);
 }
