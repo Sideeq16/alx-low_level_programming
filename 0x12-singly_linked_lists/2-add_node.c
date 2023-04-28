@@ -20,7 +20,7 @@ size_t *add_node(list_t **head, const char *str)
 		return (NULL);
 	}
 
-	newNode->str = strup(str);
+	newNode->str = strdup(str);
 	newNode->len = strlen(str);
 	newNode->next = *head;
 	*head = newNode;
