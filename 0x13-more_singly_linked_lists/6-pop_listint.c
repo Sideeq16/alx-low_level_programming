@@ -5,8 +5,9 @@
 /**
  * pop_listint - free pointer
  * @head: node head
+ * Return: value of head
  */
-void pop_listint(listint_t **head)
+int pop_listint(listint_t **head)
 {
 	listint_t *temp;
 	int n;
