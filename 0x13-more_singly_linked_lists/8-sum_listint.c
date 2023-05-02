@@ -7,7 +7,7 @@
  * @head: node head
  * Return: sum of the data
  */
-int sum_listint(listint_t **head)
+int sum_listint(listint_t *head)
 {
 	int sum = 0;
 
