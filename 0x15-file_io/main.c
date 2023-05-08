@@ -17,4 +17,6 @@ int main(int ac, char **av)
 	
 /*	n = read_textfile(av[1],11024);
 	printf("\n(printed char: %li)\n", n);*/
+
+	return (0);
 }
