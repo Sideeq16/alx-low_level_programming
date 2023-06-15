@@ -4,7 +4,7 @@
 
 /**
  * add_dnodeint - print element in doubly link
- * @h: head node
+ * @head: head node
  * @n: node data
  * Return: number of elmement in node
  */
