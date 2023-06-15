@@ -19,3 +19,25 @@ int is_palindrome(int n)
 
 	return (original == reversed);
 }
+
+/**
+ * main - find and prints the largest palindrome
+ * 3-digt numbers, followed by a new line
+ *
+ * Return: Always 0.
+ */
+int main(void)
+{
+	int i, j, product, largest = 0;
+	FILE *fp;
+
+	for (i = 100; i < 1000; i++)
+	{
+		for (j = 100; j < 1000; j++)
+		{
+			product = i * j;
+			if (is_palindrome(product) && product > largest)
+				largest = product;
+		}
+	}
+}
